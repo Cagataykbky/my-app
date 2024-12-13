@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Genel Stil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.container {
+  @apply flex h-screen w-screen;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply w-1/5 bg-gray-800 p-5 flex flex-col items-start;
+}
+
+.sidebar h2 {
+  @apply text-xl mb-4 text-white;
+}
+
+.friends-list {
+  @apply list-none w-full;
+}
+
+.friend-item {
+  @apply p-2 mb-2 bg-white bg-opacity-10 rounded cursor-pointer transition duration-300 ease-in-out;
+}
+
+.friend-item:hover {
+  @apply bg-opacity-20;
+}
+
+.add-friend {
+  @apply mt-auto p-2 bg-white bg-opacity-10 rounded text-white cursor-pointer transition duration-300 ease-in-out;
+}
+
+.add-friend:hover {
+  @apply bg-opacity-20;
+}
+
+/* Main Content */
+.main-content {
+  @apply flex-grow flex flex-col;
+}
+
+.header {
+  @apply p-4 bg-gray-700 flex justify-between items-center;
+}
+
+.chat-window {
+  @apply flex-grow p-5 overflow-y-auto text-gray-400;
+}
+
+.user-settings .settings-button {
+  @apply p-2 bg-white bg-opacity-10 rounded cursor-pointer text-white transition duration-300 ease-in-out;
+}
+
+.user-settings .settings-button:hover {
+  @apply bg-opacity-20;
+}
+
+/* Footer */
+.footer {
+  @apply p-4 bg-gray-800 flex justify-center gap-5;
+}
+
+.control-button {
+  @apply px-4 py-2 bg-white bg-opacity-10 rounded cursor-pointer text-white transition duration-300 ease-in-out;
+}
+
+.control-button:hover {
+  @apply bg-opacity-20;
+}
+
+/* Modal Stili */
+.modal {
+  @apply fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center;
+}
+
+.modal-content {
+  @apply bg-gray-700 p-5 rounded-md w-72 flex flex-col items-center;
+}
+
+.modal-content h3 {
+  @apply mb-4 text-white;
+}
+
+.modal-content input {
+  @apply w-full p-2 mb-3 rounded bg-white bg-opacity-10 text-white border-none;
+}
+
+.modal-button {
+  @apply px-4 py-2 bg-white bg-opacity-20 rounded text-white cursor-pointer mb-2 transition duration-300 ease-in-out;
+}
+
+.modal-button:hover {
+  @apply bg-opacity-30;
+}
+
+.modal-close {
+  @apply px-4 py-2 bg-red-500 bg-opacity-20 rounded text-white cursor-pointer transition duration-300 ease-in-out;
+}
+
+.modal-close:hover {
+  @apply bg-opacity-30;
+}
